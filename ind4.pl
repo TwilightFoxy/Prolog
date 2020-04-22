@@ -1,0 +1,35 @@
+man(sergei).
+man(boris).
+man(leonid).
+man(grigoriy).
+man(victor).
+bikefrom(riga).
+bikefrom(penza).
+bikefrom(lvov).
+bikefrom(harkov).
+bikefrom(moskva).
+manfrom(riga).
+manfrom(penza).
+manfrom(lvov).
+manfrom(harkov).
+manfrom(moskva).
+rider(Name, Bike, From).
+
+solve(Solve):-
+    Solve = [rider(X,Xbike,Xfrom),rider(Y,Ybike,Yfrom),rider(Z,Zbike,Zfrom),rider(C,Cbike,Cfrom),rider(V,Vbike,Vfrom)],
+
+    man(X),man(Y),man(Z),man(C),man(V),
+
+    bikefrom(Xbike),bikefrom(Ybike),bikefrom(Zbike),bikefrom(Cbike),bikefrom(Vbike),
+    unique([Xbike, Ybike, Zbike, Cbike, Vbike]),
+
+    manfrom(Xfrom),manfrom(Yfrom),manfrom(Zfrom),manfrom(Cfrom),manfrom(Vfrom),
+    unique([Xfrom, Yfrom, Zfrom, Cfrom, Vfrom]).
+member(rider(_, piece, _, poetry), Solve),
+
+
+
+
+check([]):-!.
+check([rider(_, Xbike, Xfrom)|T]):-
+  !, not(Xbike = Xfrom), check(T).

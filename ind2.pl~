@@ -9,7 +9,7 @@ more([H|T],M):-H>M, write(H),write(" "),more(T,M).
 more([_|T],M):-more(T,M).
 
 
-sr([],S,K,[H1|T1]):- Z is S/K,write(Z),write(" - Среднеее арифметическое"),nl, more([H1|T1],Z),!.
+sr([],S,K,[H1|T1]):- Z is S/K,write(Z),write(" - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"),nl, more([H1|T1],Z),!.
 sr([H|T],S,K,[H1|T1]):- S1 is S+H, K1 is K+1, sr(T,S1,K1,[H1|T1]).
 
 
