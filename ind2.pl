@@ -1,7 +1,7 @@
-r_list(A,N):-r_list(A,N,0,[]).%Ввод списка
+r_list(A,N):-r_list(A,N,0,[]).%пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 r_list(A,N,N,A):-!.
 r_list(A,N,I,B):-I1 is I+1, read(X), append(B,[X],B1),r_list(A,N,I1,B1).
-w_list([]):-!.%Вывод списка
+w_list([]):-!.%пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 w_list([H|T]):-write(H),nl,w_list(T).
 
 more([],_):-!.
@@ -9,7 +9,7 @@ more([H|T],M):-H>M, write(H),write(" "),more(T,M).
 more([_|T],M):-more(T,M).
 
 
-sr([],S,K,[H1|T1]):- Z is S/K,write(Z),write(" - Среднее арифметическое"),nl, more([H1|T1],Z),!.
+sr([],S,K,[H1|T1]):- Z is S/K,write(Z),write(" - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"),nl, more([H1|T1],Z),!.
 sr([H|T],S,K,[H1|T1]):- S1 is S+H, K1 is K+1, sr(T,S1,K1,[H1|T1]).
 
 
