@@ -7,7 +7,6 @@ let rec pros X Y =
         else (non_del X Y) && (pros X (Y+1))
 
 
-
 let pr n = 
     match n with
     | 2 -> true
@@ -52,6 +51,7 @@ let main argv =
     
     let Ans = p9_5
     System.Console.Write(Ans)
+
     let z=System.Console.ReadKey()
     
     0 // return an integer exit code
